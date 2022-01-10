@@ -6,10 +6,6 @@ orders as (
     select * from {{ ref('stg_orders') }}
 ),
 
-lifetime_value as (
-    select sum(amount) from {{ ref('fct_orders.sql') }}
-),
-
 customer_orders as (
 
     select
